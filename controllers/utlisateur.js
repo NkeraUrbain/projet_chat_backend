@@ -41,7 +41,7 @@ module.exports.Login = async(req, res)=>{
     console.log(req.body)
     const email= req.body.email
     
-    const password= (req.body.password)
+    const password= passHash(req.body.password)
 
 
     const user= await User.find({email})
