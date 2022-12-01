@@ -49,15 +49,15 @@ module.exports.Login = async(req, res)=>{
      
      const isMatch= user[0].password==password
      if(isMatch){
-      res.status(200).json('user exists')
-      console.log('user exist')
+
+      
+      res.status(200).json(user[0])
+      //console.log('user exist')
      }else{
       res.status(400).json('badpassword')
-      console.log('bad password')
      }
     }else{
       res.status(404).json('User not found, please register' )
-      console.log('user not found')
     }
   } catch (error) {
     console.log(error);
