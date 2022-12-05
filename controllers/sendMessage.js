@@ -16,6 +16,7 @@ module.exports.sendMessage=async(req, res)=>{
 module.exports.recupererMessage=async(req, res)=>{
     
   try{
+    console.log(req.body.username)
     const reponse = await Message.find({sender:req.body.username}).exec()
      res.status(200).json({data:reponse})
      }
